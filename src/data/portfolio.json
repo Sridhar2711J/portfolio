@@ -1,0 +1,210 @@
+{
+  "personal": {
+    "name": "Sridhar J",
+    "title": "MERN Stack Developer",
+    "tagline": "MERN Stack Developer | Next.js & TypeScript Enthusiast | Building modern, scalable web applications",
+    "bio": "I am a motivated Computer Science Engineer and MERN Stack Developer with expertise in Next.js and TypeScript. Currently working as a React Developer at Jayam Web Solutions, I have hands-on experience in designing and developing scalable, high-performance web applications. I specialize in full-stack development, database management, and modern web technologies. Strong understanding of clean coding practices, SDLC, and performance optimization.",
+    "email": "jayaramansridhar27@gmail.com",
+    "phone": "+91 9655367838",
+    "location": "Kallakurichi, Tamil Nadu, India",
+    "availability": "Available after 3 Months (Notice Period)",
+    "socials": {
+      "github": "https://github.com/Sridhar2711J",
+      "linkedin": "https://linkedin.com/in/sridhar-jayaraman",
+      "instagram": "https://www.instagram.com/codebysridhar/"
+    }
+  },
+  "hero": {
+    "welcomeText": "Welcome!",
+    "highlightText": "to Sridhar J's Portfolio",
+    "subText": "MERN Stack Developer with expertise in Next.js & TypeScript | Building scalable, modern web applications",
+    "ctaText": "Know About Me",
+    "ctaUrl": "/about",
+    "floatingBadges": [
+      { "name": "React.js", "icon": "react" },
+      { "name": "Next.js", "icon": "nextjs" },
+      { "name": "TypeScript", "icon": "typescript" },
+      { "name": "Node.js", "icon": "nodejs" },
+      { "name": "MongoDB", "icon": "mongodb" }
+    ]
+  },
+  "about": {
+    "heading": "About Me",
+    "subheading": "Passionate about building reliable, scalable web applications",
+    "description": "I am a Computer Science Engineer and MERN Stack Developer at Jayam Web Solutions with expertise in full-stack web development. I focus on writing clean, efficient, and testable code while following best practices in SDLC. With strong hands-on experience in React.js, Next.js, Node.js, Express.js, TypeScript, and databases (MySQL, MongoDB), I build complete end-to-end solutions that are performant, scalable, and user-friendly. I specialize in designing high-performance web applications and optimizing performance across the full software development lifecycle. I'm passionate about problem-solving, continuous learning, and enhancing user experiences through modern technology.",
+    "stats": [
+      { "label": "Projects Completed", "value": "4" },
+      { "label": "Skills Mastered", "value": "10+" },
+      { "label": "Years in Development", "value": "1" }
+    ]
+  },
+  "skills": [
+    { "name": "React.js", "percentage": 90, "category": "Frontend" },
+    { "name": "Next.js", "percentage": 85, "category": "Frontend" },
+    { "name": "JavaScript", "percentage": 92, "category": "Frontend" },
+    { "name": "TypeScript", "percentage": 80, "category": "Frontend" },
+    { "name": "HTML5 & CSS3", "percentage": 90, "category": "Frontend" },
+    { "name": "Bootstrap & Tailwind CSS", "percentage": 88, "category": "Frontend" },
+    { "name": "Node.js", "percentage": 85, "category": "Backend" },
+    { "name": "Express.js", "percentage": 85, "category": "Backend" },
+    { "name": "MongoDB", "percentage": 82, "category": "Databases" },
+    { "name": "MySQL", "percentage": 85, "category": "Databases" },
+    { "name": "SQL", "percentage": 82, "category": "Databases" },
+    { "name": "RESTful APIs", "percentage": 85, "category": "Backend" },
+    { "name": "Adobe Photoshop", "percentage": 75, "category": "Design Tools" },
+    { "name": "Microsoft Office", "percentage": 80, "category": "Tools" }
+  ],
+  "resume": {
+    "experience": [
+      {
+        "id": "exp-1",
+        "role": "MERN Stack Developer",
+        "company": "Jayam Web Solutions Pvt Ltd",
+        "duration": "Sep 2025 - Present",
+        "description": "Designed and developed high-performance web applications using React.js, Next.js, TypeScript, JavaScript, Node.js, and Express.js. Wrote clean, efficient, and testable code, integrated RESTful APIs, optimized performance and stability, supported software releases, and collaborated through code reviews to deliver scalable, high-quality solutions."
+      }
+    ],
+    "internships": [
+      {
+        "id": "intern-1",
+        "role": "Full Stack Development Intern",
+        "company": "NOVITECH",
+        "duration": "July 2024 - Aug 2024",
+        "description": "Gained hands-on experience in frontend and backend development using HTML, CSS, JavaScript, Node.js, and MySQL. Worked on building web applications and database management."
+      },
+      {
+        "id": "intern-2",
+        "role": "Android Development Intern",
+        "company": "LET'S GAMETECH",
+        "duration": "2024",
+        "description": "Completed a week-long internship on Android Development and attended a 2-day workshop on Adobe Photoshop."
+      }
+    ],
+    "college": [
+      {
+        "id": "col-1",
+        "degree": "B.E. in Computer Science & Engineering",
+        "institution": "Sri Ranganathar Institute of Engineering and Technology",
+        "location": "Coimbatore",
+        "duration": "Nov 2021 - May 2025",
+        "description": "CGPA: 7.6/10. Specialized in full-stack development and database management. Actively participated in technical conferences and presentations."
+      }
+    ],
+    "school": [
+      {
+        "id": "sch-1",
+        "degree": "Higher Secondary Certificate (HSC)",
+        "institution": "Government Higher Secondary School",
+        "location": "Kallakurichi",
+        "duration": "June 2020 - May 2021",
+        "description": "Percentage: 82%. Focused on core subjects including Mathematics, Physics, and Computer Science."
+      },
+      {
+        "id": "sch-2",
+        "degree": "Secondary School Leaving Certificate (SSLC)",
+        "institution": "Government Higher Secondary School",
+        "location": "Kallakurichi",
+        "duration": "June 2018 - Mar 2019",
+        "description": "Percentage: 75-76%. Strong foundation in academics and problem-solving skills."
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Student ID Card Barcode Scanning System",
+      "description": "A web-based attendance generation system using barcode scanning. Implemented features such as student information retrieval, attendance sheet management, and real-time barcode scanning using HTML5 QR Scanning & JsBarcode. Enables automated student tracking, reduces manual errors, and improves record accuracy.",
+      "duration": "Jan 2025 - Mar 2025",
+      "tech": ["HTML5", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "JsBarcode"],
+      "github": "https://github.com/Sridhar2711J/Students-ID-Card-Barcode-Scanning-for-Attendance-Generation",
+      "highlights": [
+        "Real-time barcode scanning capability",
+        "Automated attendance sheet generation",
+        "Student information database management",
+        "Reduced manual errors and improved accuracy"
+      ]
+    },
+    {
+      "id": "proj-2",
+      "title": "Spotify Clone",
+      "description": "A dynamic and responsive music streaming platform inspired by Spotify. Features seamless UI interactions, real-time audio control, and modular component architecture with a clean, professional design.",
+      "duration": "Jun 2025",
+      "tech": ["React.js", "Tailwind CSS", "JavaScript", "HTML5"],
+      "github": "https://github.com/Sridhar2711J",
+      "highlights": [
+        "Responsive UI design",
+        "Real-time audio controls",
+        "Modular component architecture",
+        "Seamless user interactions"
+      ]
+    },
+    {
+      "id": "proj-3",
+      "title": "Weather Application",
+      "description": "A dynamic weather application integrating real-time weather APIs to provide current weather conditions. Features an NLP-based query system for improved user interactions and intuitive weather information display.",
+      "duration": "2025",
+      "tech": ["HTML5", "CSS3", "JavaScript", "Weather API", "NLP"],
+      "github": "https://github.com/Sridhar2711J/Weather-Application",
+      "highlights": [
+        "Real-time weather data integration",
+        "NLP-based query system",
+        "Interactive user interface",
+        "Accurate weather forecasting"
+      ]
+    },
+    {
+      "id": "proj-4",
+      "title": "Portfolio Website",
+      "description": "Designed and developed a portfolio to showcase projects, skills, and contact information in a visually engaging and professional layout.",
+      "duration": "May 2025",
+      "tech": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "live": "https://github.com/Sridhar2711J/My-Portfolio.git",
+      "highlights": [
+        "Professional portfolio design",
+        "Responsive layout",
+        "Project showcase",
+        "Contact integration"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-1",
+      "title": "Full Stack Development Certification",
+      "issuer": "NOVITECH",
+      "date": "Aug 2024",
+      "description": "Comprehensive training in full-stack development with hands-on experience"
+    },
+    {
+      "id": "cert-2",
+      "title": "Technical Paper Presentation",
+      "issuer": "Sree Sakthi Engineering College - ICIECST",
+      "date": "Mar 2025",
+      "description": "Presented technical paper on 'Student ID Card Barcode Scanning for Attendance Generation'"
+    }
+  ],
+  "workshops": [
+    {
+      "id": "work-1",
+      "title": "Adobe Photoshop Workshop",
+      "issuer": "LET'S GAMETECH",
+      "duration": "2-days",
+      "date": "2024"
+    }
+  ],
+  "contact": {
+    "email": "jayaramansridhar27@gmail.com",
+    "phone": "+91 9655367838",
+    "address": "Kallakurichi, Tamil Nadu, India",
+    "socials": {
+      "github": "https://github.com/Sridhar2711J",
+      "linkedin": "https://linkedin.com/in/sridhar-jayaraman",
+      "portfolio": "https://sridhar2711j.github.io/sridharj/",
+      "netlify": "https://sridharj.netlify.app"
+    }
+  },
+  "languages": [
+    { "name": "English", "proficiency": "Intermediate" },
+    { "name": "Tamil", "proficiency": "Fluent" }
+  ]
+}
