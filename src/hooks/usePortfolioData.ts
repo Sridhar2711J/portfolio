@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import rawData from "@/data/portfolio.json";
 
 export interface PortfolioData {
   personal: {
@@ -70,14 +71,13 @@ export interface PortfolioData {
 }
 
 export function usePortfolioData() {
-  const [data, setData] = useState<PortfolioData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState<PortfolioData | null>(rawData as unknown as PortfolioData);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchData = async () => {
     try {
-      setLoading(true);
-      const res = await fetch("/api/portfolio", { cache: "no-store" });
+      const res = await fetch("/api/portfolio");
       if (!res.ok) {
         throw new Error("Failed to fetch portfolio data");
       }
@@ -85,9 +85,7 @@ export function usePortfolioData() {
       setData(json);
       setError(null);
     } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+      console.error("Failed to background refresh portfolio data:", err);
     }
   };
 
