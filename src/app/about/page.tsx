@@ -59,7 +59,7 @@ export default function About() {
           <div className="lg:col-span-5 space-y-6">
             <div className="relative h-[360px] w-full overflow-hidden rounded-3xl border border-card-border bg-white shadow-lg dark:bg-slate-800">
               <Image
-                src="/hero.png"
+                src="/profile.jpg"
                 alt={personal.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"

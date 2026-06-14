@@ -1,12 +1,54 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
-import { Code2, Database, Globe, Cpu, ArrowRight } from "lucide-react";
+import { Code2, Database, Globe, Cpu, ArrowRight, Download, CheckCircle2, XCircle, X } from "lucide-react";
 
 export default function Home() {
   const { data, loading, error } = usePortfolioData();
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const showToast = (message: string, type: "success" | "error") => {
+    setToast({ message, type });
+    setTimeout(() => {
+      setToast(null);
+    }, 4000);
+  };
+
+  const handleDownload = async () => {
+    if (isDownloading) return;
+    setIsDownloading(true);
+    console.log("Starting resume download...");
+    try {
+      const response = await fetch("/api/download");
+      console.log("Fetch response:", response.status, response.ok);
+      if (!response.ok) {
+        throw new Error("Failed to download resume. Please try again.");
+      }
+      
+      const blob = await response.blob();
+      console.log("Blob size:", blob.size);
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Sridhar_Jayaraman.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+      
+      console.log("Download triggered, showing success toast...");
+      showToast("Resume downloaded successfully!", "success");
+    } catch (err: any) {
+      console.error("Download error:", err);
+      showToast(err.message || "Something went wrong.", "error");
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -91,6 +133,18 @@ export default function Home() {
                 {hero.ctaText}
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
+              <button
+                onClick={handleDownload}
+                disabled={isDownloading}
+                className="group inline-flex items-center gap-2 rounded-full border border-primary px-8 py-4 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white shadow-md hover:shadow-lg hover:shadow-primary/10 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              >
+                {isDownloading ? "Downloading..." : "Download Resume"}
+                {isDownloading ? (
+                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent group-hover:border-white"></span>
+                ) : (
+                  <Download className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                )}
+              </button>
             </div>
           </div>
 
@@ -106,7 +160,7 @@ export default function Home() {
             <div className="relative h-[300px] w-[300px] sm:h-[380px] sm:w-[380px] overflow-visible">
               <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border-4 border-card-border bg-card-bg shadow-xl">
                 <Image
-                  src="/hero.png"
+                  src="/profile2.jpeg"
                   alt={personal.name}
                   fill
                   sizes="(max-width: 768px) 300px, 380px"
@@ -151,6 +205,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Premium Toast Notification */}
+      {toast && (
+        <div className="fixed bottom-5 right-5 z-50 animate-slide-up flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-md px-5 py-4 shadow-xl transition-all duration-300">
+          <div className={`flex h-8 w-8 items-center justify-center rounded-xl ${
+            toast.type === "success" ? "bg-emerald-500/10 text-emerald-500" : "bg-rose-500/10 text-rose-500"
+          }`}>
+            {toast.type === "success" ? (
+              <CheckCircle2 className="h-5 w-5" />
+            ) : (
+              <XCircle className="h-5 w-5" />
+            )}
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-semibold text-slate-800">{toast.message}</span>
+          </div>
+          <button 
+            onClick={() => setToast(null)} 
+            className="ml-4 text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+
     </div>
   );
 }

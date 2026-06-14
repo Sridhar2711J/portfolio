@@ -4,8 +4,33 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "John Bravo | Full Stack Developer Portfolio",
-  description: "Welcome to my portfolio. I build high performance web solutions with modern tools.",
+  title: "Sridhar J | MERN Stack Developer Portfolio",
+  description: "Welcome to the portfolio of Sridhar J, a passionate MERN Stack Developer specializing in Next.js, TypeScript, and modern web applications.",
+  openGraph: {
+    title: "Sridhar J | MERN Stack Developer Portfolio",
+    description: "Welcome to the portfolio of Sridhar J, a passionate MERN Stack Developer specializing in Next.js, TypeScript, and modern web applications.",
+    url: "https://sridharj.netlify.app",
+    siteName: "Sridhar J Portfolio",
+    images: [
+      {
+        url: "/profile.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Sridhar J Developer Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sridhar J | MERN Stack Developer Portfolio",
+    description: "Welcome to the portfolio of Sridhar J, a passionate MERN Stack Developer specializing in Next.js, TypeScript, and modern web applications.",
+    images: ["/profile.jpeg"],
+  },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

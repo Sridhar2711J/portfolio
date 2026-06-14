@@ -33,7 +33,7 @@
     "subheading": "Passionate about building reliable, scalable web applications",
     "description": "I am a Computer Science Engineer and MERN Stack Developer at Jayam Web Solutions with expertise in full-stack web development. I focus on writing clean, efficient, and testable code while following best practices in SDLC. With strong hands-on experience in React.js, Next.js, Node.js, Express.js, TypeScript, and databases (MySQL, MongoDB), I build complete end-to-end solutions that are performant, scalable, and user-friendly. I specialize in designing high-performance web applications and optimizing performance across the full software development lifecycle. I'm passionate about problem-solving, continuous learning, and enhancing user experiences through modern technology.",
     "stats": [
-      { "label": "Projects Completed", "value": "4" },
+      { "label": "Projects Completed", "value": "6" },
       { "label": "Skills Mastered", "value": "10+" },
       { "label": "Years in Development", "value": "1" }
     ]
@@ -111,17 +111,31 @@
   },
   "projects": [
     {
-      "id": "proj-1",
-      "title": "Student ID Card Barcode Scanning System",
-      "description": "A web-based attendance generation system using barcode scanning. Implemented features such as student information retrieval, attendance sheet management, and real-time barcode scanning using HTML5 QR Scanning & JsBarcode. Enables automated student tracking, reduces manual errors, and improves record accuracy.",
-      "duration": "Jan 2025 - Mar 2025",
-      "tech": ["HTML5", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "JsBarcode"],
-      "github": "https://github.com/Sridhar2711J/Students-ID-Card-Barcode-Scanning-for-Attendance-Generation",
+      "id": "proj-5",
+      "title": "Next.js Developer Portfolio",
+      "description": "A modern, responsive, and highly interactive developer portfolio website built using Next.js, React.js, Tailwind CSS, and TypeScript. Features a dynamic project gallery, clean timeline views for work/education history, certificate verification, and a responsive contact form.",
+      "duration": "Jun 2026",
+      "tech": ["Next.js", "React.js", "Tailwind CSS", "TypeScript", "Lucide React"],
+      "github": "https://github.com/Sridhar2711J/portfolio.git",
       "highlights": [
-        "Real-time barcode scanning capability",
-        "Automated attendance sheet generation",
-        "Student information database management",
-        "Reduced manual errors and improved accuracy"
+        "Built with Next.js App Router and TypeScript",
+        "Responsive and dynamic timeline for experience & education",
+        "Interactive project showcase with custom categorized skill metrics",
+        "Contact form with email simulation and clean user validation"
+      ]
+    },
+    {
+      "id": "proj-6",
+      "title": "React E-Commerce Website",
+      "description": "A fully responsive e-commerce web application built using React.js. Features user-friendly navigation, product catalog browsing, a dynamic shopping cart with real-time status updates, and a modern layout.",
+      "duration": "Sep 2025",
+      "tech": ["React.js", "CSS", "JavaScript"],
+      "github": "https://github.com/Sridhar2711J/E-Commerce.git",
+      "highlights": [
+        "Dynamic product catalog and category filters",
+        "Interactive shopping cart with state-driven updates",
+        "Modern layout styled with custom CSS media queries",
+        "Responsive design for seamless mobile and desktop navigation"
       ]
     },
     {
@@ -139,20 +153,6 @@
       ]
     },
     {
-      "id": "proj-3",
-      "title": "Weather Application",
-      "description": "A dynamic weather application integrating real-time weather APIs to provide current weather conditions. Features an NLP-based query system for improved user interactions and intuitive weather information display.",
-      "duration": "2025",
-      "tech": ["HTML5", "CSS3", "JavaScript", "Weather API", "NLP"],
-      "github": "https://github.com/Sridhar2711J/Weather-Application",
-      "highlights": [
-        "Real-time weather data integration",
-        "NLP-based query system",
-        "Interactive user interface",
-        "Accurate weather forecasting"
-      ]
-    },
-    {
       "id": "proj-4",
       "title": "Portfolio Website",
       "description": "Designed and developed a portfolio to showcase projects, skills, and contact information in a visually engaging and professional layout.",
@@ -164,6 +164,34 @@
         "Responsive layout",
         "Project showcase",
         "Contact integration"
+      ]
+    },
+    {
+      "id": "proj-1",
+      "title": "Student ID Card Barcode Scanning System",
+      "description": "A web-based attendance generation system using barcode scanning. Implemented features such as student information retrieval, attendance sheet management, and real-time barcode scanning using HTML5 QR Scanning & JsBarcode. Enables automated student tracking, reduces manual errors, and improves record accuracy.",
+      "duration": "Jan 2025 - Mar 2025",
+      "tech": ["HTML5", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "JsBarcode"],
+      "github": "https://github.com/Sridhar2711J/Students-ID-Card-Barcode-Scanning-for-Attendance-Generation",
+      "highlights": [
+        "Real-time barcode scanning capability",
+        "Automated attendance sheet generation",
+        "Student information database management",
+        "Reduced manual errors and improved accuracy"
+      ]
+    },
+    {
+      "id": "proj-3",
+      "title": "Weather Application",
+      "description": "A dynamic weather application integrating real-time weather APIs to provide current weather conditions. Features an NLP-based query system for improved user interactions and intuitive weather information display.",
+      "duration": "2025",
+      "tech": ["HTML5", "CSS3", "JavaScript", "Weather API", "NLP"],
+      "github": "https://github.com/Sridhar2711J/Weather-Application",
+      "highlights": [
+        "Real-time weather data integration",
+        "NLP-based query system",
+        "Interactive user interface",
+        "Accurate weather forecasting"
       ]
     }
   ],

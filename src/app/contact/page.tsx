@@ -9,6 +9,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   if (loading) {
     return (
@@ -34,16 +35,32 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API Form Submit
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const json = await res.json();
+      if (!res.ok) {
+        throw new Error(json.error || "Failed to send email message.");
+      }
+
       setSubmitSuccess(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1500);
+    } catch (err: any) {
+      setSubmitError(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -118,6 +135,12 @@ export default function Contact() {
           <div className="lg:col-span-7 rounded-3xl border border-card-border bg-[#f8fafc] p-8 shadow-md">
             <h4 className="text-xl font-bold text-foreground mb-6">Send Me a Message</h4>
 
+            {submitError && (
+              <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium text-red-600 dark:bg-red-950/20 dark:border-red-900/50 dark:text-red-400">
+                {submitError}
+              </div>
+            )}
+
             {submitSuccess ? (
               <div className="flex flex-col items-center justify-center text-center py-12 space-y-3 bg-primary-light/40 dark:bg-primary/5 rounded-2xl border border-primary/20">
                 <CheckCircle2 className="h-14 w-14 text-primary animate-bounce" />
@@ -141,7 +164,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="e.g. John Doe"
-                      className="w-full rounded-2xl border border-card-border bg-subtle-bg/50 px-4 py-3 text-sm font-medium focus:border-primary focus:bg-card-bg focus:outline-none dark:bg-slate-900/80 transition-all duration-200"
+                      className="w-full rounded-2xl border border-card-border bg-white px-4 py-3 text-sm font-medium focus:border-primary focus:outline-none transition-all duration-200"
                     />
                   </div>
                   <div className="space-y-2">
@@ -156,7 +179,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="e.g. johndoe@example.com"
-                      className="w-full rounded-2xl border border-card-border bg-subtle-bg/50 px-4 py-3 text-sm font-medium focus:border-primary focus:bg-card-bg focus:outline-none dark:bg-slate-900/80 transition-all duration-200"
+                      className="w-full rounded-2xl border border-card-border bg-white px-4 py-3 text-sm font-medium focus:border-primary focus:outline-none transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -173,7 +196,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Write your message here..."
-                    className="w-full rounded-2xl border border-card-border bg-subtle-bg/50 px-4 py-3 text-sm font-medium focus:border-primary focus:bg-card-bg focus:outline-none dark:bg-slate-900/80 transition-all duration-200 resize-none"
+                    className="w-full rounded-2xl border border-card-border bg-white px-4 py-3 text-sm font-medium focus:border-primary focus:outline-none transition-all duration-200 resize-none"
                   ></textarea>
                 </div>
 
