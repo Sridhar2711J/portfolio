@@ -33,7 +33,7 @@ export default function Certificates() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-base font-semibold uppercase tracking-wider text-primary">
             Credentials
           </h2>
@@ -48,40 +48,43 @@ export default function Certificates() {
 
         {/* Certificates Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {certificates.map((cert) => (
-            <div
-              key={cert.id}
-              className="flex flex-col justify-between rounded-3xl border border-card-border bg-[#f8fafc] p-6 shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                    <ShieldCheck className="h-6 w-6" />
+          {certificates.map((cert, index) => {
+            const delayClass = `delay-${(index + 1) * 100}`;
+            return (
+              <div
+                key={cert.id}
+                className={`flex flex-col justify-between rounded-3xl border border-card-border bg-[#f8fafc] p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-scale-in ${delayClass}`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                      <ShieldCheck className="h-6 w-6" />
+                    </div>
+                    {cert.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent-gray hover:text-primary transition-colors inline-flex items-center gap-1 text-xs font-semibold"
+                      >
+                        Verify <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    )}
                   </div>
-                  {cert.link && (
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent-gray hover:text-primary transition-colors inline-flex items-center gap-1 text-xs font-semibold"
-                    >
-                      Verify <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                  )}
+
+                  <h4 className="text-base font-bold text-foreground leading-snug mb-1">
+                    {cert.title}
+                  </h4>
+                  <p className="text-sm font-semibold text-primary/80 mb-4">{cert.issuer}</p>
                 </div>
 
-                <h4 className="text-base font-bold text-foreground leading-snug mb-1">
-                  {cert.title}
-                </h4>
-                <p className="text-sm font-semibold text-primary/80 mb-4">{cert.issuer}</p>
+                <div className="flex items-center gap-1.5 text-xs text-accent-gray font-medium pt-3 border-t border-card-border/60 mt-auto">
+                  <Calendar className="h-3.5 w-3.5" />
+                  <span>Issued: {cert.date}</span>
+                </div>
               </div>
-
-              <div className="flex items-center gap-1.5 text-xs text-accent-gray font-medium pt-3 border-t border-card-border/60 mt-auto">
-                <Calendar className="h-3.5 w-3.5" />
-                <span>Issued: {cert.date}</span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

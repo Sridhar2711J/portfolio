@@ -42,7 +42,7 @@ export default function About() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-base font-semibold uppercase tracking-wider text-primary">
             {about.heading}
           </h2>
@@ -57,7 +57,7 @@ export default function About() {
 
           {/* Left Side: Photo & Quick Info Cards */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="relative h-[360px] w-full overflow-hidden rounded-3xl border border-card-border bg-white shadow-lg dark:bg-slate-800">
+            <div className="relative h-[360px] w-full overflow-hidden rounded-3xl border border-card-border bg-white shadow-lg dark:bg-slate-800 animate-scale-in delay-150">
               <Image
                 src="/profile.jpg"
                 alt={personal.name}
@@ -69,23 +69,26 @@ export default function About() {
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-3 gap-4">
-              {about.stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl border border-card-border bg-[#f8fafc] p-4 text-center shadow-sm"
-                >
-                  <div className="text-xl font-bold text-primary">{stat.value}</div>
-                  <div className="mt-1 text-2xs font-semibold text-accent-gray uppercase tracking-wider">
-                    {stat.label.split(" ")[0]}
+              {about.stats.map((stat, index) => {
+                const delayClass = index === 0 ? "delay-200" : index === 1 ? "delay-250" : "delay-300";
+                return (
+                  <div
+                    key={index}
+                    className={`rounded-2xl border border-card-border bg-[#f8fafc] p-4 text-center shadow-sm animate-fade-in-up ${delayClass}`}
+                  >
+                    <div className="text-xl font-bold text-primary">{stat.value}</div>
+                    <div className="mt-1 text-2xs font-semibold text-accent-gray uppercase tracking-wider">
+                      {stat.label.split(" ")[0]}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* Right Side: Detailed Bio & Info Fields */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="prose prose-lg dark:prose-invert">
+            <div className="prose prose-lg dark:prose-invert animate-fade-in-up delay-150">
               <h4 className="text-xl font-bold text-foreground mb-4">My Story</h4>
               <p className="text-accent-gray leading-relaxed font-light">
                 {about.description}
@@ -96,15 +99,16 @@ export default function About() {
             </div>
 
             {/* Details List */}
-            <div className="border-t border-card-border pt-8">
+            <div className="border-t border-card-border pt-8 animate-fade-in-up delay-300">
               <h4 className="text-lg font-bold text-foreground mb-6">Profile Details</h4>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {profileDetails.map((detail, index) => {
                   const Icon = detail.icon;
+                  const delayClass = `delay-${(index + 1) * 100}`;
                   return (
                     <div
                       key={index}
-                      className="flex items-center gap-4 p-3 rounded-2xl border border-card-border/60 hover:border-primary/40 transition-colors bg-subtle-bg/30"
+                      className={`flex items-center gap-4 p-3 rounded-2xl border border-card-border/60 hover:border-primary/40 transition-colors bg-subtle-bg/30 animate-fade-in-up ${delayClass}`}
                     >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-light text-primary dark:bg-primary/10">
                         <Icon className="h-5 w-5" />

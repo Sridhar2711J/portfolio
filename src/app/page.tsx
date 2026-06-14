@@ -110,7 +110,7 @@ export default function Home() {
           {/* Left Text Column */}
           <div className="space-y-8 lg:col-span-7">
             <div className="space-y-4">
-              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              <h1 className="animate-fade-in-up text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
                 <span className="block text-foreground">
                   {hero.welcomeText}{" "}
                   <span className="text-primary font-black animate-pulse">!</span>
@@ -119,13 +119,13 @@ export default function Home() {
                   {hero.highlightText}
                 </span>
               </h1>
-              <p className="max-w-2xl text-lg text-accent-gray leading-relaxed font-light">
+              <p className="animate-fade-in-up delay-150 max-w-2xl text-lg text-accent-gray leading-relaxed font-light">
                 {hero.subText}
               </p>
             </div>
 
             {/* CTA Button */}
-            <div className="flex flex-wrap gap-4">
+            <div className="animate-fade-in-up delay-300 flex flex-wrap gap-4">
               <Link
                 href={hero.ctaUrl}
                 className="group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-primary/30"
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
 
             {/* Main Image Avatar Container */}
-            <div className="relative h-[300px] w-[300px] sm:h-[380px] sm:w-[380px] overflow-visible">
+            <div className="relative h-[300px] w-[300px] sm:h-[380px] sm:w-[380px] overflow-visible animate-scale-in delay-200">
               <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border-4 border-card-border bg-card-bg shadow-xl">
                 <Image
                   src="/profile2.jpeg"
@@ -196,12 +196,15 @@ export default function Home() {
       <section className="border-t border-card-border bg-subtle-bg/50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3">
-            {about.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-extrabold text-primary md:text-4xl">{stat.value}</div>
-                <div className="mt-2 text-sm font-medium text-accent-gray uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
+            {about.stats.map((stat, index) => {
+              const delayClass = index === 0 ? "delay-100" : index === 1 ? "delay-200" : "delay-300";
+              return (
+                <div key={index} className={`text-center animate-fade-in-up ${delayClass}`}>
+                  <div className="text-3xl font-extrabold text-primary md:text-4xl">{stat.value}</div>
+                  <div className="mt-2 text-sm font-medium text-accent-gray uppercase tracking-wider">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

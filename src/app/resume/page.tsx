@@ -25,13 +25,14 @@ export default function Resume() {
 
   const { resume } = data;
 
-  const renderTimelineItem = (item: any, type: "work" | "edu") => {
+  const renderTimelineItem = (item: any, type: "work" | "edu", index: number = 0) => {
     const Icon = type === "work" ? Briefcase : GraduationCap;
     const title = item.role || item.degree;
     const organization = item.company || item.institution;
+    const delayClass = `delay-${(index + 1) * 150}`;
 
     return (
-      <div key={item.id} className="relative pl-8 pb-10 last:pb-0">
+      <div key={item.id} className={`relative pl-8 pb-10 last:pb-0 animate-fade-in-up ${delayClass}`}>
         {/* Vertical Line */}
         <div className="absolute left-4 top-0 h-full w-[2px] bg-card-border -translate-x-1/2"></div>
 
@@ -66,7 +67,7 @@ export default function Resume() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-base font-semibold uppercase tracking-wider text-primary">
             History
           </h2>
@@ -85,20 +86,20 @@ export default function Resume() {
           {/* Left Column: Professional Experience & Internships */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2 animate-fade-in-up delay-75">
                 <Briefcase className="h-6 w-6 text-primary" />
                 Work Experience & Internships
               </h3>
 
               <div className="relative border-l border-transparent">
-                {resume.experience && resume.experience.map(item => renderTimelineItem(item, "work"))}
+                {resume.experience && resume.experience.map((item, idx) => renderTimelineItem(item, "work", idx))}
 
                 {resume.internships && resume.internships.length > 0 && (
                   <div className="pt-6">
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-accent-gray mb-6 ml-4">
+                    <h4 className="text-sm font-bold uppercase tracking-wider text-accent-gray mb-6 ml-4 animate-fade-in-up delay-150">
                       Internship Projects
                     </h4>
-                    {resume.internships.map(item => renderTimelineItem(item, "work"))}
+                    {resume.internships.map((item, idx) => renderTimelineItem(item, "work", idx + (resume.experience?.length || 0)))}
                   </div>
                 )}
               </div>
@@ -108,20 +109,20 @@ export default function Resume() {
           {/* Right Column: Education (College & School) */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2 animate-fade-in-up delay-75">
                 <GraduationCap className="h-6 w-6 text-primary" />
                 Education (College & School)
               </h3>
 
               <div className="relative border-l border-transparent">
-                {resume.college && resume.college.map(item => renderTimelineItem(item, "edu"))}
+                {resume.college && resume.college.map((item, idx) => renderTimelineItem(item, "edu", idx))}
 
                 {resume.school && resume.school.length > 0 && (
                   <div className="pt-6">
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-accent-gray mb-6 ml-4">
+                    <h4 className="text-sm font-bold uppercase tracking-wider text-accent-gray mb-6 ml-4 animate-fade-in-up delay-150">
                       School Education
                     </h4>
-                    {resume.school.map(item => renderTimelineItem(item, "edu"))}
+                    {resume.school.map((item, idx) => renderTimelineItem(item, "edu", idx + (resume.college?.length || 0)))}
                   </div>
                 )}
               </div>

@@ -34,7 +34,7 @@ export default function Projects() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-base font-semibold uppercase tracking-wider text-primary">
             Work
           </h2>
@@ -49,65 +49,68 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group flex flex-col justify-between rounded-3xl border border-card-border bg-[#f8fafc] p-6 shadow-sm hover:shadow-lg transition-all duration-300"
-            >
-              <div>
-                {/* Project Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-light text-primary dark:bg-primary/10">
-                    <FolderGit2 className="h-6 w-6" />
+          {projects.map((project, index) => {
+            const delayClass = `delay-${(index + 1) * 100}`;
+            return (
+              <div
+                key={project.id}
+                className={`group flex flex-col justify-between rounded-3xl border border-card-border bg-[#f8fafc] p-6 shadow-sm hover:shadow-lg transition-all duration-300 animate-scale-in ${delayClass}`}
+              >
+                <div>
+                  {/* Project Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-light text-primary dark:bg-primary/10">
+                      <FolderGit2 className="h-6 w-6" />
+                    </div>
+                    <div className="flex gap-3 text-accent-gray">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary transition-colors"
+                          aria-label="GitHub link"
+                        >
+                          <Github className="h-5 w-5" />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary transition-colors"
+                          aria-label="Live demo link"
+                        >
+                          <ExternalLink className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex gap-3 text-accent-gray">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                        aria-label="GitHub link"
-                      >
-                        <Github className="h-5 w-5" />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                        aria-label="Live demo link"
-                      >
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    )}
-                  </div>
+
+                  {/* Project Info */}
+                  <h4 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h4>
+                  <p className="text-sm text-accent-gray leading-relaxed font-light mb-6">
+                    {project.description}
+                  </p>
                 </div>
 
-                {/* Project Info */}
-                <h4 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h4>
-                <p className="text-sm text-accent-gray leading-relaxed font-light mb-6">
-                  {project.description}
-                </p>
+                {/* Technologies Tags */}
+                <div className="flex flex-wrap gap-2 border-t border-card-border/60 pt-4 mt-auto">
+                  {project.tech && project.tech.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center rounded-full bg-primary-light px-2.5 py-1 text-2xs font-semibold text-primary dark:bg-primary/10"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-
-              {/* Technologies Tags */}
-              <div className="flex flex-wrap gap-2 border-t border-card-border/60 pt-4 mt-auto">
-                {project.tech && project.tech.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center rounded-full bg-primary-light px-2.5 py-1 text-2xs font-semibold text-primary dark:bg-primary/10"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

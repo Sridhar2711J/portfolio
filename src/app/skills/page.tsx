@@ -57,7 +57,7 @@ export default function Skills() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-base font-semibold uppercase tracking-wider text-primary">
             Expertise
           </h2>
@@ -72,39 +72,42 @@ export default function Skills() {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {Object.keys(categories).map((catName) => (
-            <div
-              key={catName}
-              className="rounded-3xl border border-card-border bg-[#f8fafc] p-6 shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <div className="flex items-center gap-3 mb-6 border-b border-card-border pb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-subtle-bg">
-                  {getCategoryIcon(catName)}
-                </div>
-                <h4 className="text-xl font-bold text-foreground">{catName}</h4>
-              </div>
-
-              {/* Skills List in Category */}
-              <div className="space-y-5">
-                {categories[catName].map((skill: any, index: number) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="font-semibold text-foreground/90">{skill.name}</span>
-                      <span className="font-bold text-primary">{skill.percentage}%</span>
-                    </div>
-                    
-                    {/* Progress Bar Container */}
-                    <div className="h-2 w-full rounded-full bg-subtle-bg overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-primary transition-all duration-1000"
-                        style={{ width: `${skill.percentage}%` }}
-                      ></div>
-                    </div>
+          {Object.keys(categories).map((catName, catIdx) => {
+            const delayClass = `delay-${(catIdx + 1) * 150}`;
+            return (
+              <div
+                key={catName}
+                className={`rounded-3xl border border-card-border bg-[#f8fafc] p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in-up ${delayClass}`}
+              >
+                <div className="flex items-center gap-3 mb-6 border-b border-card-border pb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-subtle-bg">
+                    {getCategoryIcon(catName)}
                   </div>
-                ))}
+                  <h4 className="text-xl font-bold text-foreground">{catName}</h4>
+                </div>
+
+                {/* Skills List in Category */}
+                <div className="space-y-5">
+                  {categories[catName].map((skill: any, index: number) => (
+                    <div key={index} className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="font-semibold text-foreground/90">{skill.name}</span>
+                        <span className="font-bold text-primary">{skill.percentage}%</span>
+                      </div>
+                      
+                      {/* Progress Bar Container */}
+                      <div className="h-2 w-full rounded-full bg-subtle-bg overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-primary animate-grow-width delay-500"
+                          style={{ width: `${skill.percentage}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

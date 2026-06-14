@@ -77,7 +77,7 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-base font-semibold uppercase tracking-wider text-primary">
             Connect
           </h2>
@@ -95,15 +95,16 @@ export default function Contact() {
           
           {/* Left Side: Contact Methods Info Card */}
           <div className="lg:col-span-5 space-y-6">
-            <h4 className="text-xl font-bold text-foreground mb-4">Contact Information</h4>
+            <h4 className="text-xl font-bold text-foreground mb-4 animate-fade-in-up delay-75">Contact Information</h4>
             
             <div className="space-y-4">
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
+                const delayClass = `delay-${(index + 1) * 150}`;
                 return (
                   <div
                     key={index}
-                    className="flex items-start gap-4 p-5 rounded-3xl border border-card-border bg-[#f8fafc] shadow-sm"
+                    className={`flex items-start gap-4 p-5 rounded-3xl border border-card-border bg-[#f8fafc] shadow-sm animate-fade-in-up ${delayClass}`}
                   >
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-light text-primary dark:bg-primary/10">
                       <Icon className="h-6 w-6" />
@@ -132,7 +133,7 @@ export default function Contact() {
           </div>
 
           {/* Right Side: Message Submission Form */}
-          <div className="lg:col-span-7 rounded-3xl border border-card-border bg-[#f8fafc] p-8 shadow-md">
+          <div className="lg:col-span-7 rounded-3xl border border-card-border bg-[#f8fafc] p-8 shadow-md animate-scale-in delay-200">
             <h4 className="text-xl font-bold text-foreground mb-6">Send Me a Message</h4>
 
             {submitError && (
