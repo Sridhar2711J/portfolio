@@ -33,7 +33,7 @@
     "subheading": "Passionate about building reliable, scalable web applications",
     "description": "I am a Computer Science Engineer and MERN Stack Developer at Jayam Web Solutions with expertise in full-stack web development. I focus on writing clean, efficient, and testable code while following best practices in SDLC. With strong hands-on experience in React.js, Next.js, Node.js, Express.js, TypeScript, and databases (MySQL, MongoDB), I build complete end-to-end solutions that are performant, scalable, and user-friendly. I specialize in designing high-performance web applications and optimizing performance across the full software development lifecycle. I'm passionate about problem-solving, continuous learning, and enhancing user experiences through modern technology.",
     "stats": [
-      { "label": "Projects Completed", "value": "6" },
+      { "label": "Projects Completed", "value": "11" },
       { "label": "Skills Mastered", "value": "10+" },
       { "label": "Years in Development", "value": "1" }
     ]
@@ -110,6 +110,66 @@
     ]
   },
   "projects": [
+    {
+      "id": "proj-7",
+      "title": "SaaS-Based E-Commerce Platform (Nyraa)",
+      "description": "A subscription-based, multi-tenant SaaS e-commerce platform featuring a customer-facing storefront and a full admin panel for product, order, and inventory management. Sellers can create accounts and customize their storefront's homepage, color theme, and fonts, with subscription-tiered access to features like shipping cost customization and coupon management.",
+      "duration": "2026",
+      "tech": ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "MongoDB"],
+      "highlights": [
+        "Multi-tenant SaaS architecture with customer storefront and admin panel",
+        "Seller-customizable storefront homepage, color theme, and fonts",
+        "Subscription-tiered feature access (shipping customization, coupon management)",
+        "Responsive React.js UI backed by Node.js/Express.js REST APIs with MySQL and MongoDB"
+      ]
+    },
+    {
+      "id": "proj-8",
+      "title": "Vidyasathan – Dynamic Content Management Platform",
+      "description": "A dynamic web platform where all page content and site details are fully customizable by the admin, built with Next.js for optimized rendering and SEO, backed by a Node.js/Express.js and MongoDB stack for real-time content updates.",
+      "duration": "2026",
+      "tech": ["Next.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+      "highlights": [
+        "Fully admin-customizable page content and site details",
+        "Next.js used for optimized rendering and SEO",
+        "Node.js/Express.js backend with MongoDB for real-time content updates"
+      ]
+    },
+    {
+      "id": "proj-9",
+      "title": "Project & Team Management System",
+      "description": "An internal tool to track projects, modules, and developer task status, giving managers real-time visibility into completed vs. in-progress work, along with employee attendance and leave-approval workflows.",
+      "duration": "2026",
+      "tech": ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+      "highlights": [
+        "Real-time visibility into project, module, and task status for managers",
+        "Employee attendance and login/logout tracking with digital timesheets",
+        "Leave-approval workflow connecting employees and project managers"
+      ]
+    },
+    {
+      "id": "proj-10",
+      "title": "Green Flyers Club – Flight Emission Offset Platform",
+      "description": "A sustainability platform that helps travelers calculate and offset flight carbon emissions, combining a React.js frontend with backend and external data-source APIs for real-time emission calculations.",
+      "duration": "2026",
+      "tech": ["React.js", "PHP", "MySQL", "REST APIs"],
+      "highlights": [
+        "Frontend development for a flight carbon emission calculator",
+        "Integrated backend REST APIs and external data-source APIs",
+        "Real-time emission calculation and offset workflow"
+      ]
+    },
+    {
+      "id": "proj-11",
+      "title": "Action Billing Admin Panel",
+      "description": "A seller subscription management and billing admin panel. Full details available on request.",
+      "duration": "2026",
+      "tech": ["React.js", "Node.js", "Express.js"],
+      "highlights": [
+        "Seller subscription management",
+        "Admin billing panel"
+      ]
+    },
     {
       "id": "proj-5",
       "title": "Next.js Developer Portfolio",
